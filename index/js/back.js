@@ -9,3 +9,7 @@ BtnRegistro.addEventListener('click', () => {
 BtnInicioS.addEventListener('click', () => {
     container.classList.remove("active");
 });
+
+document.getElementById("loginBtn").addEventListener("click", function() {
+    window.location.href = "panel.html";
+});

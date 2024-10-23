@@ -1,20 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">    
     <title>Responsive Dashboard Design #1 | AsmrProg</title>
     <link rel="icon" href="src/img/ico.png" type="image/x-icon">
     <link rel="stylesheet" href="css/return_task.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
 <div class="container">
-    <!-- Sidebar Section -->
     <aside>
         <div class="toggle">
             <div class="logo">
@@ -47,9 +46,9 @@
                 <h3>Mensajes</h3>
                 <span class="message-count">27</span>
             </a>
-            <a href="reportes.html" onclick="navigateTo('reportes.html')">
+            <a href="estadisticas.html" onclick="navigateTo('estadisticas.html')">
                 <span class="material-icons-sharp">inventory</span>
-                <h3>Reportes</h3>
+                <h3>Estadisticas de enseñanza</h3>
             </a>
             <a href="alerta.html" onclick="navigateTo('alerta.html')">
                 <span class="material-icons-sharp">report_gmailerrorred</span>
@@ -63,7 +62,7 @@
                 <span class="material-icons-sharp">add</span>
                 <h3>Nueva clase</h3>
             </a>
-            <a href="salir.html" onclick="navigateTo('salir.html')">
+            <a href="index.html" onclick="navigateTo('index.html')">
                 <span class="material-icons-sharp">logout</span>
                 <h3>Salir</h3>
             </a>
@@ -75,12 +74,12 @@
 
     <!-- Main Content -->
     <main>
-        <h1>Tareas</h1>
+        <h3>Tareas</h3>
 
         <div class="content-tarea">
 
             <div class="div-btn-nueva-tarea div-shadow">
-                <button class="btn-nueva-tarea">Nueva tarea</button>
+                <button class="btn-nueva-tarea" onclick="navigateTo('asignar-tarea.html')">Nueva tarea</button>
                 <img src="src/img/plus.png" class="icono" alt="" />
             </div>
 
@@ -88,7 +87,7 @@
         <div class="tareas">
 
             <div class="tarea div-shadow">
-                <h1 class="h1-1">Tarea 1</h1>
+                <h3 class="h1-1">Tarea 1</h3>
                 <p class="descripcion-tarea">Reporte de investigación</p>
                 <img src="src/img/bar-chart.png" alt="estadisticas de tarea" class="icono ">
                 <img src="src/img/pencil.png" alt="estadisticas de tarea" class="icono ">
@@ -97,7 +96,7 @@
             </div>
 
             <div class="tarea div-shadow">
-                <h1 class="h1-1">Tarea 2</h1>
+                <h3 class="h1-1">Tarea 2</h3>
                 <p class="descripcion-tarea">Avance de proyecto final</p>
                 <img src="src/img/bar-chart.png" alt="estadisticas de tarea" class="icono">
                 <img src="src/img/pencil.png" alt="estadisticas de tarea" class="icono">
@@ -106,7 +105,7 @@
             </div>
 
             <div class="tarea div-shadow">
-                <h1 class="h1-1">Tarea 3</h1>
+                <h3 class="h1-1">Tarea 3</h3>
                 <p class="descripcion-tarea">Resumen</p>
                 <img src="src/img/bar-chart.png" alt="estadisticas de tarea" class="icono">
                 <img src="src/img/pencil.png" alt="estadisticas de tarea" class="icono">
@@ -169,8 +168,16 @@
         <button class="btn-cerrar-popup" id="btn-cerrar-popup">Cerrar</button>
     </div>
 
+    
 </div>
+    <script>
+        const abrirBtn = document.querySelector(".btn-abrir-asignacion");
 
+            abrirBtn.addEventListener("click", function() {            
+            window.location.href = "revision-tarea.html";
+
+    });
+    </script>
     <script src="js/popup.js"></script>
     <script src="js/orders.js"></script>
     <script src="js/index-tareas.js"></script>

@@ -9,10 +9,10 @@
 
 body{
     background-color: #AB988D;
-    background: linear-gradient(to right, #e2e2e2, #AB988D);
+    background: linear-gradient(to right, #e2e2e2, #ffca9f);
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     flex-direction: column;
     height: 100vh;
 }
@@ -47,7 +47,7 @@ body{
 }
 
 .container button{
-    background-color: #4A403B;
+    background-color: #827a6f;
     color: #fff;
     font-size: 12px;
     padding: 10px 45px;
@@ -148,7 +148,7 @@ body{
 .toggle{
     background-color: #4A403B;
     height: 100%;
-    background: linear-gradient(to right, #AB988D, #4A403B);
+    background: linear-gradient(to right, #e66700, #fea500);
     color: #fff;
     position: relative;
     left: -100%;
@@ -192,4 +192,14 @@ body{
 
 .container.active .toggle-right{
     transform: translateX(200%);
+}
+
+.logo{
+    display: flex;
+    justify-content: center;    
+    margin-bottom: 2vw;
+}
+
+.logo img{
+    width: 20vw;
 }

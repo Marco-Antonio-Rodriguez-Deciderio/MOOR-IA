@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=automation" />
+    <title>Responsive Dashboard Design #1 | AsmrProg</title>
+    <link rel="icon" href="src/img/ico.png" type="image/x-icon">    
+    <link rel="stylesheet" href="css/estadisticas.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+<div class="container">
+    <aside>
+        <div class="toggle">
+            <div class="logo">
+                <img src="src/img/logo.png" alt="MOOR IA">
+                <h2>MOOR<span class="danger"> IA</span></h2>
+            </div>
+            <div class="close" id="close-btn">
+                <span class="material-icons-sharp">close</span>
+            </div>
+        </div>
+        <div class="sidebar">
+            <a href="reporte.html" onclick="navigateTo('reporte.html')">
+                <span class="material-icons-sharp">insights</span>
+                <h3>Reporte generativo</h3>
+            </a>
+            <a href="estudiantes.html"  onclick="navigateTo('estudiantes.html')">
+                <span class="material-icons-sharp">person_outline</span>
+                <h3>Estudiantes</h3>
+            </a>
+            <a href="tareas.html" onclick="navigateTo('tareas.html')">
+                <span class="material-icons-sharp">receipt_long</span>
+                <h3>Tareas</h3>
+            </a>
+            <a href="panel.html" onclick="navigateTo('panel.html')">
+                <span class="material-icons-sharp">dashboard</span>
+                <h3>Panel de control</h3>
+            </a>
+            <a href="mensajes.html" onclick="navigateTo('mensajes.html')">
+                <span class="material-icons-sharp">mail_outline</span>
+                <h3>Mensajes</h3>
+                <span class="message-count">27</span>
+            </a>
+            <a href="estadisticas.html" class="active" onclick="navigateTo('estadisticas.html')">
+                <span class="material-icons-sharp">inventory</span>
+                <h3>Estadisticas de enseñanza</h3>
+            </a>
+            <a href="alerta.html" onclick="navigateTo('alerta.html')">
+                <span class="material-icons-sharp">report_gmailerrorred</span>
+                <h3>Alerta inteligente</h3>
+            </a>
+            <a href="ajustes.html" onclick="navigateTo('ajustes.html')">
+                <span class="material-icons-sharp">settings</span>
+                <h3>Ajustes</h3>
+            </a>
+            <a href="nueva-clase.html" onclick="navigateTo('nueva-clase.html')">
+                <span class="material-icons-sharp">add</span>
+                <h3>Nueva clase</h3>
+            </a>
+            <a href="index.html" onclick="navigateTo('index.html')">
+                <span class="material-icons-sharp">logout</span>
+                <h3>Salir</h3>
+            </a>
+        </div>
+    </aside>
+
+
+    <!-- End of Sidebar Section -->
+
+    <!-- Main Content -->
+    <main>
+
+        <h1>Estadísticas</h1>
+
+        <div class="stats-container">
+            <h1>Estadísticas de Desempeño de Clases</h1>
+    
+            <div class="class-statistics">
+                <h2>Clase 1</h2>
+                <canvas id="class1Chart" width="400" height="200"></canvas>
+                <p>Promedio de calificaciones: 85%</p>
+                <p>Mejor estudiante: Estudiante 1 (98%)</p>
+                <p>Peor estudiante: Estudiante 2 (65%)</p>
+            </div>
+    
+            <div class="class-statistics">
+                <h2>Clase 2</h2>
+                <canvas id="class2Chart" width="400" height="200"></canvas>
+                <p>Promedio de calificaciones: 78%</p>
+                <p>Mejor estudiante: Estudiante 4 (92%)</p>
+                <p>Peor estudiante: Estudiante 5 (60%)</p>
+            </div>
+    
+            <div class="class-statistics">
+                <h2>Clase 3</h2>
+                <canvas id="class3Chart" width="400" height="200"></canvas>
+                <p>Promedio de calificaciones: 90%</p>
+                <p>Mejor estudiante: Estudiante 7 (100%)</p>
+                <p>Peor estudiante: Estudiante 8 (80%)</p>
+            </div>
+    
+            <div class="overall-analysis">
+                <h2>Análisis General del Desempeño</h2>
+                <p>El desempeño general de las clases es satisfactorio, con un promedio de calificaciones superior al 80%. La clase 3 destaca por su rendimiento, mientras que la clase 2 presenta áreas de mejora.</p>
+            </div>
+        </div>
+    </main>
+    <script>
+        // Datos de ejemplo para los gráficos
+        const class1Data = [95, 90, 85, 80, 75];
+        const class2Data = [80, 75, 70, 85, 90];
+        const class3Data = [100, 90, 80, 95, 85];
+
+        const ctx1 = document.getElementById('class1Chart').getContext('2d');
+        const ctx2 = document.getElementById('class2Chart').getContext('2d');
+        const ctx3 = document.getElementById('class3Chart').getContext('2d');
+
+        new Chart(ctx1, {
+            type: 'bar',
+            data: {
+                labels: ['Estudiante 1', 'Estudiante 2', 'Estudiante 3', 'Estudiante 4', 'Estudiante 5'],
+                datasets: [{
+                    label: 'Calificaciones Clase 1',
+                    data: class1Data,
+                    backgroundColor: 'rgba(239, 113, 88, 0.6)',
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 100
+                    }
+                }
+            }
+        });
+
+        new Chart(ctx2, {
+            type: 'bar',
+            data: {
+                labels: ['Estudiante 4', 'Estudiante 5', 'Estudiante 6', 'Estudiante 7', 'Estudiante 8'],
+                datasets: [{
+                    label: 'Calificaciones Clase 2',
+                    data: class2Data,
+                    backgroundColor: 'rgba(239, 113, 88, 0.6)',
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 100
+                    }
+                }
+            }
+        });
+
+        new Chart(ctx3, {
+            type: 'bar',
+            data: {
+                labels: ['Estudiante 7', 'Estudiante 8', 'Estudiante 9', 'Estudiante 10', 'Estudiante 11'],
+                datasets: [{
+                    label: 'Calificaciones Clase 3',
+                    data: class3Data,
+                    backgroundColor: 'rgba(239, 113, 88, 0.6)',
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 100
+                    }
+                }
+            }
+        });
+    </script>
+    <script src="js/index-tareas.js"></script>
+</body>
+</html>

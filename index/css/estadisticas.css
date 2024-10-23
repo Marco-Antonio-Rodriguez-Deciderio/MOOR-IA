@@ -1,0 +1,57 @@
+.stats-container {
+    width: 100%;
+    margin: 20px auto;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+
+.class-statistics {
+    margin-bottom: 20px;
+}
+
+.class-statistics h2 {
+    background-color: #ef7158;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.overall-analysis {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+  /* Define una cuadrícula de 3 columnas, y el main ocupará las dos últimas */
+  .container {
+    display: grid;
+    grid-template-columns: 1fr 2fr 2fr; /* 3 columnas: aside en la primera y main en las dos últimas */
+    gap: 20px; /* Espacio entre columnas */
+}
+
+aside {
+    grid-column: 1 / span 1; /* Ocupa solo la primera columna */
+}
+
+main {
+    grid-column: 2 / span 2; /* Ocupa las dos últimas columnas */
+}
+
+/* Ajuste responsivo opcional para pantallas más pequeñas */
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr; /* Pasa a una columna en pantallas pequeñas */
+    }
+
+    aside,
+    main {
+        grid-column: 1 / span 1; /* Ambos ocupan una columna completa */
+    }
+}
+
+  

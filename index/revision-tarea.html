@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">    
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+    <title>Responsive Dashboard Design #1 | AsmrProg</title>
+    <link rel="icon" href="src/img/ico.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/revision.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<div class="container">
+    <aside>
+        <div class="toggle">
+            <div class="logo">
+                <img src="src/img/logo.png" alt="MOOR IA">
+                <h2>MOOR<span class="danger"> IA</span></h2>
+            </div>
+            <div class="close" id="close-btn">
+                <span class="material-icons-sharp">close</span>
+            </div>
+        </div>
+        <div class="sidebar">
+            <a href="reporte.html"  onclick="navigateTo('reporte.html')">
+                <span class="material-icons-sharp">insights</span>
+                <h3>Reporte generativo</h3>
+            </a>
+            <a href="estudiantes.html" onclick="navigateTo('estudiantes.html')">
+                <span class="material-icons-sharp">person_outline</span>
+                <h3>Estudiantes</h3>
+            </a>
+            <a href="tareas.html" class="active" onclick="navigateTo('tareas.html')">
+                <span class="material-icons-sharp">receipt_long</span>
+                <h3>Tareas</h3>
+            </a>
+            <a href="panel.html" onclick="navigateTo('panel.html')">
+                <span class="material-icons-sharp">dashboard</span>
+                <h3>Panel de control</h3>
+            </a>
+            <a href="mensajes.html" onclick="navigateTo('mensajes.html')">
+                <span class="material-icons-sharp">mail_outline</span>
+                <h3>Mensajes</h3>
+                <span class="message-count">27</span>
+            </a>
+            <a href="reportes.html" onclick="navigateTo('reportes.html')">
+                <span class="material-icons-sharp">inventory</span>
+                <h3>Reportes</h3>
+            </a>
+            <a href="alerta.html" onclick="navigateTo('alerta.html')">
+                <span class="material-icons-sharp">report_gmailerrorred</span>
+                <h3>Alerta inteligente</h3>
+            </a>
+            <a href="ajustes.html" onclick="navigateTo('ajustes.html')">
+                <span class="material-icons-sharp">settings</span>
+                <h3>Ajustes</h3>
+            </a>
+            <a href="nueva-clase.html" onclick="navigateTo('nueva-clase.html')">
+                <span class="material-icons-sharp">add</span>
+                <h3>Nueva clase</h3>
+            </a>
+            <a href="index.html" onclick="navigateTo('index.html')">
+                <span class="material-icons-sharp">logout</span>
+                <h3>Salir</h3>
+            </a>
+        </div>
+    </aside>
+
+
+    <!-- End of Sidebar Section -->
+
+    <!-- Main Content -->
+    <main>
+        <h1>Revisión</h1>
+
+        <div class="rev-container">
+            <div>
+                <button class="btn-nav point">Anterior estudiante</button>
+            </div>
+            <div class="rev-content">
+                <h3>Tarea:</h3>
+                <h3>Nombre de alumno:</h3>
+            <!-- rubrica -->
+                <div class="section-rubrica">
+                    <h5 class="toggle-rubrica">Rúbrica de evaluación <span class="material-icons-sharp">expand_more</span></h5>
+                    <div class="rubrica-content">
+                        <div>
+                            <h5>Criterio de evaluación 1:</h5>
+                            <p>Descripción: </p>
+                            <p>Ponderación: </p>
+                            <p>Calificación: <input type="text" class="input-text-calif"> / 100</p>
+                        </div>
+                        <div>
+                            <h5>Criterio de evaluación 2:</h5>
+                            <p>Descripción: </p>
+                            <p>Ponderación: </p>
+                            <p>Calificación: <input type="text" class="input-text-calif"> / 100</p>
+                        </div>  
+                        
+                        <div>
+                            <button class="evaluar-ia">Evaluar con IA</button>
+                        </div>
+                         
+                    </div>
+                </div>
+
+                <!-- trabajo estudiante -->
+
+                <div class="section-trabajo">
+                    <h5 class="toggle-trabajo">Trabajo de estudiante <span class="material-icons-sharp">expand_more</span></h5>
+                    <div class="trabajo-content">
+                        <p>Trabajo del estudiante:</p>
+                        <div class="pdf-viewer">
+                            <iframe src="src/pdf/ejemplo.pdf" width="100%" height="500px"></iframe>
+                        </div>
+                        <a href="src/pdf/ejemplo.pdf" target="_blank" class="button-pdf">Abrir PDF en nueva pestaña</a>
+                    </div>
+                </div>
+
+                <!-- retroalimentación -->
+
+                <div class="section-retroalimentacion">
+                    <h5 class="toggle-retroalimentacion">Retroalimentación <span class="material-icons-sharp">expand_more</span></h5>
+                    <div class="retroalimentacion-content">
+                        <h5>Análisis del documento PDF</h5>
+                        <div class="feedback-analysis">
+                            <p><strong>Ortografía:</strong> Se detectaron errores mínimos.</p>
+                            <p><strong>Estructura:</strong> El documento está bien organizado. Este cumple con los rquisitos de solictados en la rubrica de calificación</p>
+                            <p><strong>Claridad:</strong> El contenido es claro y fácil de entender.</p>
+                            <p><strong>Recomendaciones:</strong> Se recomienda revisar los siguientes puntos para mejorar:</p>
+                            <ul>
+                                <li>Mejorar la justificación de los párrafos en la página 3.</li>
+                                <li>Agregar una conclusión más sólida en la página 5.</li>
+                                <li>Verificar citas y referencias bibliográficas.</li>
+                            </ul>
+
+                            <p><strong>Análisis de aprendizaje:</strong> Se observa que en el segundo tema "Nombre de tema" tal vez no se logro una comprención completa por parte del estudiante:</p>
+                            <ul>
+                                <li>Descripción del tema poco entendido en un contexto más sencillo..</li>
+                                <li>Retroalimentación y correccón.</li>
+                                <li>Posibles sitios web y documentos por si se requiere adentrarse más dentro del tema.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+
+            </div>
+
+
+
+            
+            <div>
+                <button class="btn-nav point">Siguiente estudiante</button>
+            </div>
+        </div>
+
+    </main>
+    <script src="js/revision.js"></script>
+    <script src="js/index-tareas.js"></script>
+</body>
+</html>

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=automation" />
+    <title>Responsive Dashboard Design #1 | AsmrProg</title>
+    <link rel="icon" href="src/img/ico.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/AgendarT.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<div class="container">
+    <aside>
+        <div class="toggle">
+            <div class="logo">
+                <img src="src/img/logo.png" alt="MOOR IA">
+                <h2>MOOR<span class="danger"> IA</span></h2>
+            </div>
+            <div class="close" id="close-btn">
+                <span class="material-icons-sharp">close</span>
+            </div>
+        </div>
+        <div class="sidebar">
+            <a href="reporte.html" onclick="navigateTo('reporte.html')">
+                <span class="material-icons-sharp">insights</span>
+                <h3>Reporte generativo</h3>
+            </a>
+            <a href="estudiantes.html" onclick="navigateTo('estudiantes.html')">
+                <span class="material-icons-sharp">person_outline</span>
+                <h3>Estudiantes</h3>
+            </a>
+            <a href="tareas.html" class="active" onclick="navigateTo('tareas.html')">
+                <span class="material-icons-sharp">receipt_long</span>
+                <h3>Tareas</h3>
+            </a>
+            <a href="panel.html" onclick="navigateTo('panel.html')">
+                <span class="material-icons-sharp">dashboard</span>
+                <h3>Panel de control</h3>
+            </a>
+            <a href="mensajes.html" onclick="navigateTo('mensajes.html')">
+                <span class="material-icons-sharp">mail_outline</span>
+                <h3>Mensajes</h3>
+                <span class="message-count">27</span>
+            </a>
+            <a href="estadisticas.html" onclick="navigateTo('estadisticas.html')">
+                <span class="material-icons-sharp">inventory</span>
+                <h3>Estadisticas de enseñanza</h3>
+            </a>
+            <a href="alerta.html" onclick="navigateTo('alerta.html')">
+                <span class="material-icons-sharp">report_gmailerrorred</span>
+                <h3>Alerta inteligente</h3>
+            </a>
+            <a href="ajustes.html" onclick="navigateTo('ajustes.html')">
+                <span class="material-icons-sharp">settings</span>
+                <h3>Ajustes</h3>
+            </a>
+            <a href="nueva-clase.html" onclick="navigateTo('nueva-clase.html')">
+                <span class="material-icons-sharp">add</span>
+                <h3>Nueva clase</h3>
+            </a>
+            <a href="index.html" onclick="navigateTo('index.html')">
+                <span class="material-icons-sharp">logout</span>
+                <h3>Salir</h3>
+            </a>
+        </div>
+    </aside>
+
+
+    <!-- End of Sidebar Section -->
+
+    <!-- Main Content -->
+    <main>
+        <h1>Crear nueva tarea</h1>
+        <div class="PanelP">
+            <div class="input-container">
+                <input type="text" placeholder="Nombre de tarea">
+                <button type="button">Publicar</button>
+            </div>
+            <div class="Container">
+                <label>Materia </label>
+                <select id="opciones" name="opciones">
+                    <option value="opcion1">Español</option>
+                    <option value="opcion2">Matematicas</option>
+                    <option value="opcion3">Historia</option>
+                    <option value="opcion4">Geografia</option>
+                    <option value="opcion4">Fisica</option>
+                    <option value="opcion4">Formación Civica y Ética</option>
+                </select>
+                <div>
+                    <label>Descripción: </label>
+                    <textarea name="Descripción" id="Descripción"></textarea>
+                    <p class="add-ia">Genera una tarea con solamente unas con algunas pocas palabras <br>
+                        <span class="material-symbols-outlined">
+                            automation
+                            </span>
+                    </p>
+                </div>
+            </div>
+            <div class="container">
+    
+                <div class="container">
+                    <div class="calendar">
+                        <div class="header">
+                            <div class="month"></div>
+                            <div class="btns">
+                                <div class="btn today-btn">
+                                    <i class="fas fa-calendar-day"></i>
+                                </div>
+                                <div class="btn prev-btn">
+                                    <i class="fas fa-chevron-left"></i>
+                                </div>
+                                <div class="btn next-btn">
+                                    <i class="fas fa-chevron-right"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="weekdays">
+                            <div class="day">Sun</div>
+                            <div class="day">Mon</div>
+                            <div class="day">Tue</div>
+                            <div class="day">Wed</div>
+                            <div class="day">Thu</div>
+                            <div class="day">Fri</div>
+                            <div class="day">Sat</div>
+                        </div>
+                        <div class="days">
+                            <!-- lets add days using js -->
+                        </div>
+                    </div>
+                </div>
+    
+            </div>
+            <div class="Container2" id="Tabla">
+                <table border="1" id="TablaD">
+                    <tr>
+                        <td>Descripción</td>
+                        <td>Calificación</td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" placeholder=""></td>
+                        <td>
+                            <select id="opciones" name="opciones">
+                                <option value="opcion1">5</option>
+                                <option value="opcion2">6</option>
+                                <option value="opcion3">7</option>
+                                <option value="opcion4">8</option>
+                                <option value="opcion4">9</option>
+                                <option value="opcion4">10</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" placeholder=""></td>
+                        <td>
+                            <select id="opciones" name="opciones">
+                                <option value="opcion1">5</option>
+                                <option value="opcion2">6</option>
+                                <option value="opcion3">7</option>
+                                <option value="opcion4">8</option>
+                                <option value="opcion4">9</option>
+                                <option value="opcion4">10</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" placeholder=""></td>
+                        <td>
+                            <select id="opciones" name="opciones">
+                                <option value="opcion1">5</option>
+                                <option value="opcion2">6</option>
+                                <option value="opcion3">7</option>
+                                <option value="opcion4">8</option>
+                                <option value="opcion4">9</option>
+                                <option value="opcion4">10</option>
+                            </select>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+    </main>
+    <script src="js/AgendarT.js"></script>
+    <script src="js/index-tareas.js"></script>
+</body>
+</html>
