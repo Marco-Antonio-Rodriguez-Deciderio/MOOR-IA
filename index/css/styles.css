@@ -5,14 +5,14 @@
     box-sizing: border-box;
 }
 
-body {
+/* body {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     background-color: #F1EFEE;
     font-family: Arial, sans-serif;
-}
+} */
 
 .PanelP {
     width: calc(100% - 20px);
@@ -182,7 +182,7 @@ button:active{
   }
   
   /* Define una cuadrícula de 3 columnas, y el main ocupará las dos últimas */
-.container {
+  .container {
     display: grid;
     grid-template-columns: 1fr 2fr 2fr; /* 3 columnas: aside en la primera y main en las dos últimas */
     gap: 20px; /* Espacio entre columnas */

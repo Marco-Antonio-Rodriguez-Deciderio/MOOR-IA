@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">    
+    <title>Responsive Dashboard Design #1 | AsmrProg</title>
+    <link rel="icon" href="src/img/ico.png" type="image/x-icon">    
+    <link rel="stylesheet" href="css/nueva-clase.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<div class="container">
+    <aside>
+        <div class="toggle">
+            <div class="logo">
+                <img src="src/img/logo.png" alt="MOOR IA">
+                <h2>MOOR<span class="danger"> IA</span></h2>
+            </div>
+            <div class="close" id="close-btn">
+                <span class="material-icons-sharp">close</span>
+            </div>
+        </div>
+        <div class="sidebar">
+            <a href="reporte.html" onclick="navigateTo('reporte.html')">
+                <span class="material-icons-sharp">insights</span>
+                <h3>Reporte generativo</h3>
+            </a>
+            <a href="estudiantes.html"  onclick="navigateTo('estudiantes.html')">
+                <span class="material-icons-sharp">person_outline</span>
+                <h3>Estudiantes</h3>
+            </a>
+            <a href="tareas.html" onclick="navigateTo('tareas.html')">
+                <span class="material-icons-sharp">receipt_long</span>
+                <h3>Tareas</h3>
+            </a>
+            <a href="panel.html" onclick="navigateTo('panel.html')">
+                <span class="material-icons-sharp">dashboard</span>
+                <h3>Panel de control</h3>
+            </a>
+            <a href="mensajes.html" onclick="navigateTo('mensajes.html')">
+                <span class="material-icons-sharp">mail_outline</span>
+                <h3>Mensajes</h3>
+                <span class="message-count">27</span>
+            </a>
+            <a href="estadisticas.html" onclick="navigateTo('estadisticas.html')">
+                <span class="material-icons-sharp">inventory</span>
+                <h3>Estadisticas de enseñanza</h3>
+            </a>
+            <a href="alerta.html"  onclick="navigateTo('alerta.html')">
+                <span class="material-icons-sharp">report_gmailerrorred</span>
+                <h3>Alerta inteligente</h3>
+            </a>
+            <a href="ajustes.html"  onclick="navigateTo('ajustes.html')">
+                <span class="material-icons-sharp">settings</span>
+                <h3>Ajustes</h3>
+            </a>
+            <a href="nueva-clase.html" class="active" onclick="navigateTo('nueva-clase.html')">
+                <span class="material-icons-sharp">add</span>
+                <h3>Nueva clase</h3>
+            </a>
+            <a href="index.html" onclick="navigateTo('index.html')">
+                <span class="material-icons-sharp">logout</span>
+                <h3>Salir</h3>
+            </a>
+        </div>
+    </aside>
+
+
+    <!-- End of Sidebar Section -->
+
+    <!-- Main Content -->
+    <main>
+        <div class="header">
+            <h1>Crear Nueva Clase</h1>
+            <p>Complete los detalles para crear una nueva clase</p>
+        </div>
+    
+            <div class="alert alert-success" id="successAlert">
+                Clase creada exitosamente
+            </div>
+    
+            <div class="card">
+                <form id="createClassForm" onsubmit="handleSubmit(event)">
+                    <div class="form-group">
+                        <label for="className">Nombre de la Clase*</label>
+                        <input 
+                            type="text" 
+                            id="className" 
+                            required 
+                            placeholder="Ej: Matemáticas 101">
+                        <div class="error-text" id="classNameError">
+                            El nombre de la clase es requerido
+                        </div>
+                    </div>
+    
+                    <div class="form-group">
+                        <label for="studentCount">Número de Estudiantes*</label>
+                        <div class="students-container">
+                            <button type="button" class="number-control" onclick="decrementStudents()">-</button>
+                            <input 
+                                type="number" 
+                                id="studentCount" 
+                                required 
+                                min="1" 
+                                value="1">
+                            <button type="button" class="number-control" onclick="incrementStudents()">+</button>
+                        </div>
+                    </div>
+    
+                    <div class="form-group">
+                        <label>Imagen de la Clase</label>
+                        <div class="image-upload-container" onclick="document.getElementById('classImage').click()">
+                            <div class="upload-icon">📸</div>
+                            <p>Click para subir una imagen</p>
+                            <input 
+                                type="file" 
+                                id="classImage" 
+                                accept="image/*" 
+                                hidden 
+                                onchange="handleImageUpload(event)">
+                        </div>
+                        <img id="imagePreview" class="image-preview" alt="Vista previa">
+                    </div>
+    
+                    <div class="form-group">
+                        <label for="classDescription">Descripción de la Clase</label>
+                        <textarea 
+                            id="classDescription" 
+                            placeholder="Describe los objetivos y detalles de la clase..."></textarea>
+                    </div>
+    
+                    <button type="submit" class="btn">Crear Clase</button>
+                </form>
+            </div>
+        </div>
+
+    </main>
+    <script>
+        function handleImageUpload(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const preview = document.getElementById('imagePreview');
+                    preview.src = e.target.result;
+                    preview.style.display = 'block';
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+
+        function incrementStudents() {
+            const input = document.getElementById('studentCount');
+            input.value = parseInt(input.value) + 1;
+        }
+
+        function decrementStudents() {
+            const input = document.getElementById('studentCount');
+            const currentValue = parseInt(input.value);
+            if (currentValue > 1) {
+                input.value = currentValue - 1;
+            }
+        }
+
+        function handleSubmit(e) {
+            e.preventDefault();
+            
+            // Validación básica
+            const className = document.getElementById('className').value;
+            const studentCount = document.getElementById('studentCount').value;
+            const description = document.getElementById('classDescription').value;
+            
+            if (!className.trim()) {
+                document.getElementById('classNameError').style.display = 'block';
+                return;
+            }
+
+            // Crear objeto con los datos de la clase
+            const classData = {
+                name: className,
+                studentCount: parseInt(studentCount),
+                description: description,
+                // La imagen se manejaría aquí si hubiera backend
+            };
+
+            console.log('Datos de la clase:', classData);
+
+            // Mostrar alerta de éxito
+            const alert = document.getElementById('successAlert');
+            alert.style.display = 'block';
+            
+            // Ocultar alerta después de 3 segundos
+            setTimeout(() => {
+                alert.style.display = 'none';
+            }, 3000);
+
+            // Resetear formulario
+            e.target.reset();
+            document.getElementById('imagePreview').style.display = 'none';
+        }
+    </script>
+    <script src="js/index-tareas.js"></script>
+</body>
+</html>

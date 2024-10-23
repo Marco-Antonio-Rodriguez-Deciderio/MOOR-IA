@@ -750,3 +750,31 @@ main .recent-orders a{
     cursor: pointer;
 }
 
+  /* Define una cuadrícula de 3 columnas, y el main ocupará las dos últimas */
+  .container {
+    display: grid;
+    grid-template-columns: 1fr 2fr 2fr; /* 3 columnas: aside en la primera y main en las dos últimas */
+    gap: 20px; /* Espacio entre columnas */
+}
+
+aside {
+    grid-column: 1 / span 1; /* Ocupa solo la primera columna */
+}
+
+main {
+    grid-column: 2 / span 2; /* Ocupa las dos últimas columnas */
+}
+
+/* Ajuste responsivo opcional para pantallas más pequeñas */
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr; /* Pasa a una columna en pantallas pequeñas */
+    }
+
+    aside,
+    main {
+        grid-column: 1 / span 1; /* Ambos ocupan una columna completa */
+    }
+}
+
+  
