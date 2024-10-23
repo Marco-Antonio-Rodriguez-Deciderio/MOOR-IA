@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Responsive Dashboard Design #1 | AsmrProg</title>
+    <link rel="icon" href="src/img/ico.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/return_task.css">
+</head>
+
+<body>
+
+<div class="container">
+    <!-- Sidebar Section -->
+    <aside>
+        <div class="toggle">
+            <div class="logo">
+                <img src="src/img/logo.png" alt="MOOR IA">
+                <h2>MOOR<span class="danger"> IA</span></h2>
+            </div>
+            <div class="close" id="close-btn">
+                <span class="material-icons-sharp">close</span>
+            </div>
+        </div>
+        <div class="sidebar">
+            <a href="reporte.html" onclick="navigateTo('reporte.html')">
+                <span class="material-icons-sharp">insights</span>
+                <h3>Reporte generativo</h3>
+            </a>
+            <a href="estudiantes.html" onclick="navigateTo('estudiantes.html')">
+                <span class="material-icons-sharp">person_outline</span>
+                <h3>Estudiantes</h3>
+            </a>
+            <a href="tareas.html" class="active" onclick="navigateTo('tareas.html')">
+                <span class="material-icons-sharp">receipt_long</span>
+                <h3>Tareas</h3>
+            </a>
+            <a href="panel.html" onclick="navigateTo('panel.html')">
+                <span class="material-icons-sharp">dashboard</span>
+                <h3>Panel de control</h3>
+            </a>
+            <a href="mensajes.html" onclick="navigateTo('mensajes.html')">
+                <span class="material-icons-sharp">mail_outline</span>
+                <h3>Mensajes</h3>
+                <span class="message-count">27</span>
+            </a>
+            <a href="reportes.html" onclick="navigateTo('reportes.html')">
+                <span class="material-icons-sharp">inventory</span>
+                <h3>Reportes</h3>
+            </a>
+            <a href="alerta.html" onclick="navigateTo('alerta.html')">
+                <span class="material-icons-sharp">report_gmailerrorred</span>
+                <h3>Alerta inteligente</h3>
+            </a>
+            <a href="ajustes.html" onclick="navigateTo('ajustes.html')">
+                <span class="material-icons-sharp">settings</span>
+                <h3>Ajustes</h3>
+            </a>
+            <a href="nueva-clase.html" onclick="navigateTo('nueva-clase.html')">
+                <span class="material-icons-sharp">add</span>
+                <h3>Nueva clase</h3>
+            </a>
+            <a href="salir.html" onclick="navigateTo('salir.html')">
+                <span class="material-icons-sharp">logout</span>
+                <h3>Salir</h3>
+            </a>
+        </div>
+    </aside>
+
+
+    <!-- End of Sidebar Section -->
+
+    <!-- Main Content -->
+    <main>
+        <h1>Tareas</h1>
+
+        <div class="content-tarea">
+
+            <div class="div-btn-nueva-tarea div-shadow">
+                <button class="btn-nueva-tarea">Nueva tarea</button>
+                <img src="src/img/plus.png" class="icono" alt="" />
+            </div>
+
+        </div>
+        <div class="tareas">
+
+            <div class="tarea div-shadow">
+                <h1 class="h1-1">Tarea 1</h1>
+                <p class="descripcion-tarea">Reporte de investigación</p>
+                <img src="src/img/bar-chart.png" alt="estadisticas de tarea" class="icono ">
+                <img src="src/img/pencil.png" alt="estadisticas de tarea" class="icono ">
+                <img src="src/img/eye.png" alt="estadisticas de tarea" class="icono btn-abrir-popup">
+                <p class="fecha-vencimiento">Fecha de vencimiento 20/10/2024</p>
+            </div>
+
+            <div class="tarea div-shadow">
+                <h1 class="h1-1">Tarea 2</h1>
+                <p class="descripcion-tarea">Avance de proyecto final</p>
+                <img src="src/img/bar-chart.png" alt="estadisticas de tarea" class="icono">
+                <img src="src/img/pencil.png" alt="estadisticas de tarea" class="icono">
+                <img src="src/img/eye.png" alt="estadisticas de tarea" class="icono btn-abrir-popup">
+                <p class="fecha-vencimiento">Fecha de vencimiento 30/10/2024</p>
+            </div>
+
+            <div class="tarea div-shadow">
+                <h1 class="h1-1">Tarea 3</h1>
+                <p class="descripcion-tarea">Resumen</p>
+                <img src="src/img/bar-chart.png" alt="estadisticas de tarea" class="icono">
+                <img src="src/img/pencil.png" alt="estadisticas de tarea" class="icono">
+                <img src="src/img/eye.png" alt="estadisticas de tarea" class="icono btn-abrir-popup">
+                <p class="fecha-vencimiento">Fecha de vencimiento 5/11/2024</p>
+            </div>
+        </div>
+
+    </main>
+
+    <div class="popup-overlay" id="popup-overlay"></div>
+
+    <div class="popup" id="popup">
+        <h2>Tareas recibidas</h2>
+        <div class="tarea-estudiante">
+
+            <div class="icono-estudiante ">
+                <img src="src/img/user.png" class="icono" />
+            </div>
+            <div class="descripcion-entrega-tarea">
+                <h2>Omar Uriel</h2>
+                <h2>Entregó: 12/10/2025</h2>
+                <h2>Calificación: <input type="text" class="input-text-calif"> / 100</h2>
+                <img src="src/img/ai.png" class="icono point" >
+                <button class="btn-abrir-asignacion" id="btn-abrir-id">Abrir</button>
+                <button class="btn-devolver-asignacion">Devolver</button>
+            </div>
+        </div>
+
+        <div class="tarea-estudiante">
+
+            <div class="icono-estudiante ">
+                <img src="src/img/user.png" class="icono" />
+            </div>
+            <div class="descripcion-entrega-tarea">
+                <h2>Mauricio Leonardo</h2>
+                <h2>Entregó: 12/10/2025</h2>
+                <h2>Calificación: <input type="text" class="input-text-calif"> / 100</h2>
+                <img src="src/img/ai.png" class="icono point" >
+                <button class="btn-abrir-asignacion">Abrir</button>
+                <button class="btn-devolver-asignacion">Devolver</button>
+            </div>
+        </div>
+
+        <div class="tarea-estudiante">
+
+            <div class="icono-estudiante ">
+                <img src="src/img/user.png" class="icono" />
+            </div>
+            <div class="descripcion-entrega-tarea">
+                <h2>Frida Sophia</h2>
+                <h2>Entregó: 12/10/2025</h2>
+                <h2>Calificación: <input type="text" class="input-text-calif"> / 100</h2>
+                <img src="src/img/ai.png" class="icono point" >
+                <button class="btn-abrir-asignacion">Abrir</button>
+                <button class="btn-devolver-asignacion">Devolver</button>
+            </div>
+        </div>
+
+        <button class="btn-cerrar-popup" id="btn-cerrar-popup">Cerrar</button>
+    </div>
+
+</div>
+
+    <script src="js/popup.js"></script>
+    <script src="js/orders.js"></script>
+    <script src="js/index-tareas.js"></script>
+</body>
+</html>
